@@ -29,6 +29,13 @@ def getOctDigit(digit):
     for x in range(len(digits)):
         pass
 
+def gethexanum(decimal_digit):
+    hexalist = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
+    for x in range(len(digit)):
+        pass
+    
+
+
     
 def whichTriangle(side_1, side_2, side_3):
     sidesInOrder(side_1,side_2,side_3)
@@ -115,17 +122,35 @@ def convertBase(number, num_base, conversion_base):
                 converted_num.append(octal_decimal % conversion_base)
                 octal_decimal = octal_decimal / conversion_base
         converted_num.reverse()
+        for i in converted_num:
+            print converted_num[i]
         return converted_num
 
     elif(num_base == 2 and conversion_base == 16):
-        return toDecimal(number,num_base)
+        hex_decimal = toDecimal(number,num_base)
         converted_num = []
-        if octal_decimal > 0:
-            while octal_decimal > 0:
-                converted_num.append(octal_decimal % conversion_base)
-                octal_decimal = octal_decimal / conversion_base
+        if hex_decimal > 0:
+            while hex_decimal > 0:
+                converted_num.append(hex_decimal % conversion_base)
+                hex_decimal = hex_decimal / conversion_base
         converted_num.reverse()
-        return converted_num
+        hexalist = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
+        hex_out = []
+        for i in range(len(converted_num)):
+            hex_out.append(hexalist[converted_num[i]])
+        return hex_out
 
     elif(num_base == 2 and conversion_base == 2):
         return number
+
+    elif(num_base == 10 and conversion_base == 10):
+        return num_base
+    elif(num_base == 10 and conversion_base == 8):
+        hex_decimal = toDecimal(number,num_base)
+        converted_num = []
+        if hex_decimal > 0:
+            while hex_decimal > 0:
+                converted_num.append(hex_decimal % conversion_base)
+                hex_decimal = hex_decimal / conversion_base
+        converted_num.reverse()
+        return converted_num
