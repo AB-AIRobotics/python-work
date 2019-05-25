@@ -101,21 +101,31 @@ def toDecimal(number,base):
     elif(base == 10):
         return number
 
-#print toDecimal(4,10)
-
 def convertBase(number, num_base, conversion_base):
     
     if (num_base == 2 and conversion_base == 10):
-        return toDecimal(number,num_base)
-        
-    elif(num_base == 8 and conversion_base == 10):
-        return toDecimal(number,num_base)
-    elif(num_base == 16 and conversion_base == 10):
-        return toDecimal(number,num_base)
-    elif(num_base == 10 and conversion_base == 10):
-        return toDecimal(number,num_base)
+        binary_decimal = toDecimal(number,num_base)
+        return binary_decimal
 
+    elif(num_base == 2 and conversion_base == 8):
+        octal_decimal = toDecimal(number,num_base)
+        converted_num = []
+        if octal_decimal > 0:
+            while octal_decimal > 0:
+                converted_num.append(octal_decimal % conversion_base)
+                octal_decimal = octal_decimal / conversion_base
+        converted_num.reverse()
+        return converted_num
 
-print convertBase(1010 , 2 , 10)
+    elif(num_base == 2 and conversion_base == 16):
+        return toDecimal(number,num_base)
+        converted_num = []
+        if octal_decimal > 0:
+            while octal_decimal > 0:
+                converted_num.append(octal_decimal % conversion_base)
+                octal_decimal = octal_decimal / conversion_base
+        converted_num.reverse()
+        return converted_num
 
-raw_input("\n\nPress the enter key to exit.")
+    elif(num_base == 2 and conversion_base == 2):
+        return number
