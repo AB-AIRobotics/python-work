@@ -16,6 +16,8 @@ def sidesInOrder(side_1,side_2,side_3):
     print "Sides in sorted order: ", small_side,medium_side, large_side
     return(small_side,medium_side,large_side)
 
+
+
 def getDecDigit(digit):
     digits = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
     for x in range(len(digits)):
@@ -105,6 +107,7 @@ def convertBase(number, num_base, conversion_base):
     
     if (num_base == 2 and conversion_base == 10):
         return toDecimal(number,num_base)
+        
     elif(num_base == 8 and conversion_base == 10):
         return toDecimal(number,num_base)
     elif(num_base == 16 and conversion_base == 10):
