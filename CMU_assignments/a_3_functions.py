@@ -24,16 +24,21 @@ def getDecDigit(digit):
         if digit == digits[x]:
             return x
             
-def getOctDigit(digit):
-    digits = ['0','1','2','3','4','5','6','7']
-    for x in range(len(digits)):
-        pass
-
-def gethexanum(decimal_digit):
+def convertToBase(number, conversion_base):
+    converted_num = []
+    if number > 0:
+        while number > 0:
+            converted_num.append(number % conversion_base)
+            number = number / conversion_base
+    converted_num.reverse()
+    return converted_num
+  
+def convertToHexa(numlist):
     hexalist = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
-    for x in range(len(digit)):
-        pass
-    
+    hex_out = []
+    for i in range(len(numlist)):
+        hex_out.append(hexalist[numlist[i]])
+    return hex_out    
 
 
     
@@ -116,41 +121,29 @@ def convertBase(number, num_base, conversion_base):
 
     elif(num_base == 2 and conversion_base == 8):
         octal_decimal = toDecimal(number,num_base)
-        converted_num = []
-        if octal_decimal > 0:
-            while octal_decimal > 0:
-                converted_num.append(octal_decimal % conversion_base)
-                octal_decimal = octal_decimal / conversion_base
-        converted_num.reverse()
-        for i in converted_num:
-            print converted_num[i]
-        return converted_num
+        numlist = convertToBase(octal_decimal, conversion_base)
+        return numlist
 
     elif(num_base == 2 and conversion_base == 16):
         hex_decimal = toDecimal(number,num_base)
-        converted_num = []
-        if hex_decimal > 0:
-            while hex_decimal > 0:
-                converted_num.append(hex_decimal % conversion_base)
-                hex_decimal = hex_decimal / conversion_base
-        converted_num.reverse()
-        hexalist = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
-        hex_out = []
-        for i in range(len(converted_num)):
-            hex_out.append(hexalist[converted_num[i]])
-        return hex_out
-
+        numlist = convertToBase(hex_decimal,conversion_base)
+        anslist = convertToHexa(numlist)
+        return anslist 
+        
     elif(num_base == 2 and conversion_base == 2):
         return number
 
     elif(num_base == 10 and conversion_base == 10):
         return num_base
     elif(num_base == 10 and conversion_base == 8):
-        hex_decimal = toDecimal(number,num_base)
-        converted_num = []
-        if hex_decimal > 0:
-            while hex_decimal > 0:
-                converted_num.append(hex_decimal % conversion_base)
-                hex_decimal = hex_decimal / conversion_base
-        converted_num.reverse()
-        return converted_num
+        num = convertToBase(number , conversion_base)
+        return num 
+    elif (num_base == 10 and conversion_base == 16):
+        num = convertToBase(number, conversion_base)
+        anslist = convertToHexa(num)
+        return anslist
+
+    elif (num_base == 10 and conversion_base == 2):
+        num = convertToBase(number, conversion_base)
+        return num 
+
