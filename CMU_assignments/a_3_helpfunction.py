@@ -2,6 +2,17 @@ import math
 import string
 
 def sidesInOrder(side_1,side_2,side_3):
+    """[summary]
+    
+    Parameters
+    ----------
+    side_1 : [type]
+        [description]
+    side_2 : [type]
+        [description]
+    side_3 : [type]
+        [description]
+    """
     global small_side
     global large_side
     global medium_side
@@ -12,12 +23,38 @@ def sidesInOrder(side_1,side_2,side_3):
     return(small_side,medium_side,large_side)
 
 def getDecDigit(digit):
+    """[summary]
+    
+    Parameters
+    ----------
+    digit : [type]
+        [description]
+    
+    Returns
+    -------
+    [type]
+        [description]
+    """
     digits = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
     for x in range(len(digits)):
         if digit == digits[x]:
             return x
             
 def convertToBase(number, conversion_base):
+    """[summary]
+    
+    Parameters
+    ----------
+    number : [type]
+        [description]
+    conversion_base : [type]
+        [description]
+    
+    Returns
+    -------
+    [type]
+        [description]
+    """
     converted_num = []
     if number > 0:
         while number > 0:
@@ -27,6 +64,18 @@ def convertToBase(number, conversion_base):
     return converted_num
   
 def convertToHexa(numlist):
+    """[summary]
+    
+    Parameters
+    ----------
+    numlist : [type]
+        [description]
+    
+    Returns
+    -------
+    [type]
+        [description]
+    """
     hexalist = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
     hex_out = []
     for i in range(len(numlist)):
@@ -34,6 +83,18 @@ def convertToHexa(numlist):
     return hex_out 
 
 def listConversion(inputList):
+    """[summary]
+    
+    Parameters
+    ----------
+    inputList : [type]
+        [description]
+    
+    Returns
+    -------
+    [type]
+        [description]
+    """
     var = "".join(str(x) for x in inputList)  
     return var 
 
