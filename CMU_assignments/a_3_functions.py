@@ -1,47 +1,7 @@
 import math
 import string
-digs = string.digits + string.ascii_letters
-#print digs
-'''
-Helper functions
-'''
+from a_3_helpfunction import*
 
-def sidesInOrder(side_1,side_2,side_3):
-    global small_side
-    global large_side
-    global medium_side
-    small_side = min(side_1, side_2, side_3)
-    large_side = max(side_1, side_2, side_3)
-    medium_side = (side_1 + side_2 + side_3) - small_side - large_side
-    print "Sides in sorted order: ", small_side,medium_side, large_side
-    return(small_side,medium_side,large_side)
-
-
-
-def getDecDigit(digit):
-    digits = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
-    for x in range(len(digits)):
-        if digit == digits[x]:
-            return x
-            
-def convertToBase(number, conversion_base):
-    converted_num = []
-    if number > 0:
-        while number > 0:
-            converted_num.append(number % conversion_base)
-            number = number / conversion_base
-    converted_num.reverse()
-    return converted_num
-  
-def convertToHexa(numlist):
-    hexalist = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
-    hex_out = []
-    for i in range(len(numlist)):
-        hex_out.append(hexalist[numlist[i]])
-    return hex_out    
-
-
-    
 def whichTriangle(side_1, side_2, side_3):
     sidesInOrder(side_1,side_2,side_3)
     if small_side+medium_side<large_side or small_side+medium_side==large_side:
@@ -141,9 +101,27 @@ def convertBase(number, num_base, conversion_base):
     elif (num_base == 10 and conversion_base == 16):
         num = convertToBase(number, conversion_base)
         anslist = convertToHexa(num)
-        return anslist
+        ans = listConversion(anslist)
+        return ans
 
     elif (num_base == 10 and conversion_base == 2):
         num = convertToBase(number, conversion_base)
-        return num 
+        ans = listConversion(num)
+        return ans 
 
+
+def collatz(integer):
+    count = 0
+    var = 2
+    number = integer
+    while (var > 1):
+        temp = number % 2
+        if (temp == 0):
+            var = number/2
+            count += 1
+            number = number/2 
+        elif (temp != 0):
+            var = 3*number + 1
+            count += 1
+            number = number/2
+    return count
