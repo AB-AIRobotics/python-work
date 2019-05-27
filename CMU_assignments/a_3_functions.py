@@ -109,7 +109,6 @@ def convertBase(number, num_base, conversion_base):
         ans = listConversion(num)
         return ans 
 
-
 def collatz(integer):
     count = 0
     var = 2
@@ -125,3 +124,49 @@ def collatz(integer):
             count += 1
             number = number/2
     return count
+
+def transpose(inputlist, numrows, numcolumns):
+    sample_list = [12,3,-2,5,1,24,7,15,3,9,5,-13]
+    matTlist = []
+    for i in range(len(sample_list)):
+        print "Matrix index: ",i
+        row = i / numcolumns
+        print "Row: ",row
+        column = i % numcolumns
+        print "Colum: ",column
+        index = row * numcolumns + column
+        print "Initial value: ",index
+    print matTlist
+
+transpose(1, 3, 4)
+
+def nearestWords(wordlist, word):
+    for i in range(len(wordlist)):
+        if (word == wordlist[i]):
+            return word
+        elif(word != wordlist[i]):
+            tempwordlist = []
+            for i in word:
+                tempwordlist.append(i)
+            print "tempo",tempwordlist
+            for i in range(len(wordlist)):
+                temp = wordlist[i]
+                temporiginallist = []
+                for i in temp:
+                    temporiginallist.append(i)
+                print temporiginallist        
+        else:
+            return None 
+             
+        break
+     
+
+templist = ['it','is','sunny','today','we','will','win']
+
+# print nearestWords(templist,'as')
+
+def solveCryptarithm(puzzle, solution):
+    pass 
+
+def convertUnits(fromQuantity, fromUnits, toUnits, category):
+    pass 
