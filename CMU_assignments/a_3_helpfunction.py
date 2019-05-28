@@ -99,6 +99,17 @@ def listConversion(inputList):
     return var 
 
 def listToMat(inlist, numrows, numcolumns):
+    """[summary]
+    
+    Parameters
+    ----------
+    inlist : [type]
+        [description]
+    numrows : [type]
+        [description]
+    numcolumns : [type]
+        [description]
+    """
 
     sample_list = [12,3,-2,5,1,24,7,15,3,9,5,-13]
     sample_rows = 3
@@ -108,7 +119,7 @@ def listToMat(inlist, numrows, numcolumns):
     for i in range(sample_rows):
         row = []
         for l in range(sample_columns):
-            row.append(sample_list[l+i])
+            row.append(sample_list[l+(sample_columns*i)])
         matrix.append(row)
     print matrix
 
