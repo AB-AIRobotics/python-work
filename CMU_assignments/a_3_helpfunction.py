@@ -98,3 +98,18 @@ def listConversion(inputList):
     var = "".join(str(x) for x in inputList)  
     return var 
 
+def listToMat(inlist, numrows, numcolumns):
+
+    sample_list = [12,3,-2,5,1,24,7,15,3,9,5,-13]
+    sample_rows = 3
+    sample_columns = 4
+    numlistelements = len(sample_list)
+    matrix = []
+    for i in range(sample_rows):
+        row = []
+        for l in range(sample_columns):
+            row.append(sample_list[l+i])
+        matrix.append(row)
+    print matrix
+
+listToMat(1,1,1)

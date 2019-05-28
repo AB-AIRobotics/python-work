@@ -220,9 +220,13 @@ def transpose(inputlist, numrows, numcolumns):
         print "Colum: ",column
         index = row * numcolumns + column
         print "Initial value: ",index
+        while (row < =1):
+            list
     print matTlist
 
-transpose(1, 3, 4)
+
+
+
 
 def nearestWords(wordlist, word):
     """[summary]
@@ -257,9 +261,6 @@ def nearestWords(wordlist, word):
             return None 
              
         break
-     
-
-templist = ['it','is','sunny','today','we','will','win']
 
 # print nearestWords(templist,'as')
 
