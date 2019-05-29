@@ -127,3 +127,99 @@ def collatz(integer):
             count += 1
             number = number/2
     return count
+<<<<<<< HEAD
+=======
+
+def transpose(inputlist, numrows, numcolumns):
+    """[summary]
+    
+    Parameters
+    ----------
+    inputlist : [type]
+        [description]
+    numrows : [type]
+        [description]
+    numcolumns : [type]
+        [description]
+    """
+    matrix = listToMat(inputlist,numrows,numcolumns)
+    print "Original matrix: ",matrix
+    zeromatrix = tranposeMatrixZero(inputlist,numcolumns,numrows)
+    for i in range(len(matrix)):
+        for j in range(len(matrix[0])):
+            zeromatrix[j][i] = matrix[i][j]
+
+    final_matrix = []
+    for r in zeromatrix:
+         final_matrix.append(r)
+
+    output_list = []
+    for x in final_matrix:
+        for y in x:
+            output_list.append(y)
+    return output_list        
+    
+def nearestWords(wordlist, word):
+    """[summary]
+    
+    Parameters
+    ----------
+    wordlist : [type]
+        [description]
+    word : [type]
+        [description]
+    
+    Returns
+    -------
+    [type]
+        [description]
+    """
+    for i in range(len(wordlist)):
+        if (word == wordlist[i]):
+            return word
+        elif(word != wordlist[i]):
+            tempwordlist = []
+            for i in word:
+                tempwordlist.append(i)
+            print "tempo",tempwordlist
+            for i in range(len(wordlist)):
+                temp = wordlist[i]
+                temporiginallist = []
+                for i in temp:
+                    temporiginallist.append(i)
+                print temporiginallist        
+        else:
+            return None 
+             
+        break
+
+# print nearestWords(templist,'as')
+
+def solveCryptarithm(puzzle, solution):
+    """[summary]
+    
+    Parameters
+    ----------
+    puzzle : [type]
+        [description]
+    solution : [type]
+        [description]
+    """
+    pass 
+
+def convertUnits(fromQuantity, fromUnits, toUnits, category):
+    """[summary]
+    
+    Parameters
+    ----------
+    fromQuantity : [type]
+        [description]
+    fromUnits : [type]
+        [description]
+    toUnits : [type]
+        [description]
+    category : [type]
+        [description]
+    """
+    pass 
+>>>>>>> bbf28c53ab4383ae5ed8a9c633e57decb968fd8f

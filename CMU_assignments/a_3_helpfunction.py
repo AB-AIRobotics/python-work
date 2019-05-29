@@ -110,17 +110,26 @@ def listToMat(inlist, numrows, numcolumns):
     numcolumns : [type]
         [description]
     """
+    totalelements = numrows * numcolumns
+    numlistelements = len(inlist)
+    if (totalelements == numlistelements):
+        matrix = []
+        for i in range(numrows):
+            row = []
+            for l in range(numcolumns):
+                row.append(inlist[l+(numcolumns*i)])
+            matrix.append(row)
+        return matrix
+    else:
+        print "Given list does not have correct dimensions"
 
-    sample_list = [12,3,-2,5,1,24,7,15,3,9,5,-13]
-    sample_rows = 3
-    sample_columns = 4
-    numlistelements = len(sample_list)
-    matrix = []
-    for i in range(sample_rows):
+
+def tranposeMatrixZero(inputlist, numcolumns, numrows):
+    zerolist = [0] * len(inputlist)
+    tempmatrix = []
+    for i in range(numcolumns):
         row = []
-        for l in range(sample_columns):
-            row.append(sample_list[l+(sample_columns*i)])
-        matrix.append(row)
-    print matrix
-
-listToMat(1,1,1)
+        for l in range(numrows):
+            row.append(zerolist[l+(numrows*i)])
+        tempmatrix.append(row)
+    return tempmatrix
