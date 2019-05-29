@@ -3,24 +3,6 @@ import string
 from a_3_helpfunction import*
 
 def whichTriangle(side_1, side_2, side_3):
-    """
-    [summary]
-    
-    Parameters
-    ----------
-    side_1 : [type]
-        [description]
-    side_2 : [type]
-        [description]
-    side_3 : [type]
-        [description]
-    
-    Returns
-    -------
-    [type]
-        [description]
-    """
-
 
     sidesInOrder(side_1,side_2,side_3)
     if small_side+medium_side<large_side or small_side+medium_side==large_side:
@@ -52,18 +34,6 @@ def whichTriangle(side_1, side_2, side_3):
    
 
 def isFloat(num):
-    """[summary]
-    
-    Parameters
-    ----------
-    num : [type]
-        [description]
-    
-    Returns
-    -------
-    [type]
-        [description]
-    """
     if '.' in float_num:
         print "The number enter is floating point number"
         return True
@@ -74,20 +44,6 @@ def isFloat(num):
 
 
 def toDecimal(number,base):
-    """[summary]
-    
-    Parameters
-    ----------
-    number : [type]
-        [description]
-    base : [type]
-        [description]
-    
-    Returns
-    -------
-    [type]
-        [description]
-    """
 
     if (base == 2):
         tempList = map(int , str(number))
@@ -119,22 +75,7 @@ def toDecimal(number,base):
         return number
 
 def convertBase(number, num_base, conversion_base):
-    """[summary]
-    
-    Parameters
-    ----------
-    number : [type]
-        [description]
-    num_base : [type]
-        [description]
-    conversion_base : [type]
-        [description]
-    
-    Returns
-    -------
-    [type]
-        [description]
-    """
+
     
     if (num_base == 2 and conversion_base == 10):
         binary_decimal = toDecimal(number,num_base)
@@ -170,19 +111,8 @@ def convertBase(number, num_base, conversion_base):
         ans = listConversion(num)
         return ans 
 
+
 def collatz(integer):
-    """[summary]
-    
-    Parameters
-    ----------
-    integer : [type]
-        [description]
-    
-    Returns
-    -------
-    [type]
-        [description]
-    """
     count = 0
     var = 2
     number = integer
@@ -197,97 +127,3 @@ def collatz(integer):
             count += 1
             number = number/2
     return count
-
-def transpose(inputlist, numrows, numcolumns):
-    """[summary]
-    
-    Parameters
-    ----------
-    inputlist : [type]
-        [description]
-    numrows : [type]
-        [description]
-    numcolumns : [type]
-        [description]
-    """
-    sample_list = [12,3,-2,5,1,24,7,15,3,9,5,-13]
-    matTlist = []
-    for i in range(len(sample_list)):
-        print "Matrix index: ",i
-        row = i / numcolumns
-        print "Row: ",row
-        column = i % numcolumns
-        print "Colum: ",column
-        index = row * numcolumns + column
-        print "Initial value: ",index
-        while (row < =1):
-            list
-    print matTlist
-
-
-
-
-
-def nearestWords(wordlist, word):
-    """[summary]
-    
-    Parameters
-    ----------
-    wordlist : [type]
-        [description]
-    word : [type]
-        [description]
-    
-    Returns
-    -------
-    [type]
-        [description]
-    """
-    for i in range(len(wordlist)):
-        if (word == wordlist[i]):
-            return word
-        elif(word != wordlist[i]):
-            tempwordlist = []
-            for i in word:
-                tempwordlist.append(i)
-            print "tempo",tempwordlist
-            for i in range(len(wordlist)):
-                temp = wordlist[i]
-                temporiginallist = []
-                for i in temp:
-                    temporiginallist.append(i)
-                print temporiginallist        
-        else:
-            return None 
-             
-        break
-
-# print nearestWords(templist,'as')
-
-def solveCryptarithm(puzzle, solution):
-    """[summary]
-    
-    Parameters
-    ----------
-    puzzle : [type]
-        [description]
-    solution : [type]
-        [description]
-    """
-    pass 
-
-def convertUnits(fromQuantity, fromUnits, toUnits, category):
-    """[summary]
-    
-    Parameters
-    ----------
-    fromQuantity : [type]
-        [description]
-    fromUnits : [type]
-        [description]
-    toUnits : [type]
-        [description]
-    category : [type]
-        [description]
-    """
-    pass 
