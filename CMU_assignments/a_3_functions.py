@@ -210,24 +210,18 @@ def transpose(inputlist, numrows, numcolumns):
     numcolumns : [type]
         [description]
     """
-    sample_list = [12,3,-2,5,1,24,7,15,3,9,5,-13]
-    matTlist = []
-    for i in range(len(sample_list)):
-        print "Matrix index: ",i
-        row = i / numcolumns
-        print "Row: ",row
-        column = i % numcolumns
-        print "Colum: ",column
-        index = row * numcolumns + column
-        print "Initial value: ",index
-        while (row < =1):
-            list
-    print matTlist
+    matrix = listToMat(inputlist,numrows,numcolumns)
+    print matrix
+    zeromatrix = tranposeMatrixZero(inputlist,numcolumns,numrows)
+    for i in range(len(matrix)):
+        for j in range(len(matrix[0])):
+            zeromatrix[j][i] = matrix[i][j]
 
-
-
-
-
+    final_matrix = []
+    for r in zeromatrix:
+         final_matrix.append(r)
+    return final_matrix
+    
 def nearestWords(wordlist, word):
     """[summary]
     
