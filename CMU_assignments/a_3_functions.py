@@ -243,23 +243,43 @@ def nearestWords(wordlist, word):
         [description]
     """
     for i in range(len(wordlist)):
-        if (word == wordlist[i]):
-            return word
-        elif(word != wordlist[i]):
-            tempwordlist = []
-            for i in word:
-                tempwordlist.append(i)
-            print "tempo",tempwordlist
-            for i in range(len(wordlist)):
-                temp = wordlist[i]
-                temporiginallist = []
-                for i in temp:
-                    temporiginallist.append(i)
-                print temporiginallist        
-        else:
-            return None 
-             
-        break
+        # if (word == wordlist[i]):
+        #     return word
+        # elif(word != wordlist[i]):
+        tempwordlist = []
+        for i in word:
+            tempwordlist.append(i)
+        mainlist = []
+        for i in range(len(wordlist)):
+            temp = wordlist[i]
+            temporiginallist = []
+            for i in temp:
+                temporiginallist.append(i)
+            mainlist.append(temporiginallist)
+            
+    for matching_list in mainlist:
+        score = 0
+        index = 0
+        for c in tempwordlist:
+            min_dist = 1000000
+            temp_score = 0
+            for y in range(len(matching_list)):
+                mc = matching_list[y]
+                distance = abs(index-y) + 0.01
+                if c == mc and distance < min_dist:
+                    temp_score = 1
+                    min_dist = distance
+            score += temp_score/(min_dist**2)
+            index += 1
+        
+        print(matching_list)
+        print(score)
+
+
+
+
+    
+    
 
 # print nearestWords(templist,'as')
 
