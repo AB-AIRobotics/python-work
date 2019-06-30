@@ -243,9 +243,6 @@ def nearestWords(wordlist, word):
         [description]
     """
     for i in range(len(wordlist)):
-        # if (word == wordlist[i]):
-        #     return word
-        # elif(word != wordlist[i]):
         tempwordlist = []
         for i in word:
             tempwordlist.append(i)
@@ -261,7 +258,7 @@ def nearestWords(wordlist, word):
         score = 0
         index = 0
         for c in tempwordlist:
-            min_dist = 1000000
+            min_dist = 10000
             temp_score = 0
             for y in range(len(matching_list)):
                 mc = matching_list[y]
