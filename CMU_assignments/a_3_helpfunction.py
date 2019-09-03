@@ -133,3 +133,21 @@ def tranposeMatrixZero(inputlist, numcolumns, numrows):
             row.append(zerolist[l+(numrows*i)])
         tempmatrix.append(row)
     return tempmatrix
+
+def evenOddCheck(integer):
+    output = integer % 2
+    if (output == 1):
+        print "Given integer is Odd"
+        return integer
+    else:
+        print "Given integer is Even"
+        return integer
+
+def preCollatz(integer):
+    evenOdd = integer % 2
+    if (evenOdd == 0):
+        result = integer / 2
+        return result
+    else:
+        result = 3*integer + 1
+        return result

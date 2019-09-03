@@ -171,32 +171,18 @@ def convertBase(number, num_base, conversion_base):
         return ans 
 
 def collatz(integer):
-    """[summary]
     
-    Parameters
-    ----------
-    integer : [type]
-        [description]
-    
-    Returns
-    -------
-    [type]
-        [description]
-    """
     count = 0
-    var = 2
-    number = integer
-    while (var > 1):
-        temp = number % 2
-        if (temp == 0):
-            var = number/2
+    output = 0
+    if (integer >= 1):
+        while (output != 1):
+            output = preCollatz(integer)
             count += 1
-            number = number/2 
-        elif (temp != 0):
-            var = 3*number + 1
-            count += 1
-            number = number/2
-    return count
+            integer = output 
+        return count
+    elif((integer < 1) or (integer == 0)):
+        return -1
+    
 
 def transpose(inputlist, numrows, numcolumns):
     """[summary]
@@ -306,4 +292,5 @@ def convertUnits(fromQuantity, fromUnits, toUnits, category):
     category : [type]
         [description]
     """
+    
     pass 
