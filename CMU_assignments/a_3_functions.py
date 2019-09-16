@@ -171,6 +171,14 @@ def convertBase(number, num_base, conversion_base):
         return ans 
 
 def collatz(integer):
+    """[summary]
+    
+    Arguments:
+        integer {[type]} -- [description]
+    
+    Returns:
+        [type] -- [description]
+    """
     
     count = 0
     output = 0
@@ -257,12 +265,7 @@ def nearestWords(wordlist, word):
         
         print(matching_list)
         print(score)
-
-
-
-
-    
-    
+   
 
 # print nearestWords(templist,'as')
 
@@ -292,5 +295,59 @@ def convertUnits(fromQuantity, fromUnits, toUnits, category):
     category : [type]
         [description]
     """
-    
-    pass 
+    if (category == "mass"):
+        if (fromUnits == "g" and toUnits == "lb"):
+           print "apply mass conversion formula"
+        elif(fromUnits == "g" and toUnits == "ton"):
+            print "apply mass conversion formula"
+        elif(fromUnits == "ton" and toUnits == "g"):
+            print "apply  mass conversion fromula"
+        elif(fromUnits == "ton" and toUnits == "lb"):
+            print "apply mass conversion fromula" 
+        elif(fromUnits == "lb" and toUnits == "g"):
+            print "apply mass conversion fromula"   
+        elif(fromUnits == "lb" and toUnits == "ton"):
+            print "apply mass conversion fromula"
+    elif(category == "time"):
+        if (fromUnits == "g" and toUnits == "lb"):
+           print "apply conversion formula"
+        elif(fromUnits == "g" and toUnits == "ton"):
+            print "apply conversion formula"
+        elif(fromUnits == "ton" and toUnits == "g"):
+            print "apply conversion fromula"
+        elif(fromUnits == "ton" and toUnits == "lb"):
+            print "apply conversion fromula" 
+        elif(fromUnits == "lb" and toUnits == "g"):
+            print "apply conversion fromula"   
+        elif(fromUnits == "lb" and toUnits == "ton"):
+            print "apply conversion fromula"
+    elif(category == "length"):
+        if (fromUnits == "g" and toUnits == "lb"):
+           print "apply conversion formula"
+        elif(fromUnits == "g" and toUnits == "ton"):
+            print "apply conversion formula"
+        elif(fromUnits == "ton" and toUnits == "g"):
+            print "apply conversion fromula"
+        elif(fromUnits == "ton" and toUnits == "lb"):
+            print "apply conversion fromula" 
+        elif(fromUnits == "lb" and toUnits == "g"):
+            print "apply conversion fromula"   
+        elif(fromUnits == "lb" and toUnits == "ton"):
+            print "apply conversion fromula"
+    elif(category == "temperature"):
+        if (fromUnits == "g" and toUnits == "lb"):
+           print "apply conversion formula"
+        elif(fromUnits == "g" and toUnits == "ton"):
+            print "apply conversion formula"
+        elif(fromUnits == "ton" and toUnits == "g"):
+            print "apply conversion fromula"
+        elif(fromUnits == "ton" and toUnits == "lb"):
+            print "apply conversion fromula" 
+        elif(fromUnits == "lb" and toUnits == "g"):
+            print "apply conversion fromula"   
+        elif(fromUnits == "lb" and toUnits == "ton"):
+            print "apply conversion fromula"
+
+convertUnits(2,"g","ton","mass")
+
+
