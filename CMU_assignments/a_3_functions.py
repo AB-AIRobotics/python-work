@@ -309,43 +309,55 @@ def convertUnits(fromQuantity, fromUnits, toUnits, category):
         elif(fromUnits == "lb" and toUnits == "ton"):
             print "apply mass conversion fromula"
     elif(category == "time"):
-        if (fromUnits == "g" and toUnits == "lb"):
+        if (fromUnits == "s" and toUnits == "hr"):
            print "apply conversion formula"
-        elif(fromUnits == "g" and toUnits == "ton"):
+        elif(fromUnits == "s" and toUnits == "min"):
             print "apply conversion formula"
-        elif(fromUnits == "ton" and toUnits == "g"):
+        elif(fromUnits == "hr" and toUnits == "s"):
             print "apply conversion fromula"
-        elif(fromUnits == "ton" and toUnits == "lb"):
+        elif(fromUnits == "hr" and toUnits == "min"):
             print "apply conversion fromula" 
-        elif(fromUnits == "lb" and toUnits == "g"):
+        elif(fromUnits == "min" and toUnits == "s"):
             print "apply conversion fromula"   
-        elif(fromUnits == "lb" and toUnits == "ton"):
+        elif(fromUnits == "min" and toUnits == "hr"):
             print "apply conversion fromula"
     elif(category == "length"):
-        if (fromUnits == "g" and toUnits == "lb"):
+        if (fromUnits == "m" and toUnits == "yard"):
            print "apply conversion formula"
-        elif(fromUnits == "g" and toUnits == "ton"):
+        elif(fromUnits == "m" and toUnits == "foot"):
             print "apply conversion formula"
-        elif(fromUnits == "ton" and toUnits == "g"):
+        elif(fromUnits == "m" and toUnits == "inch"):
             print "apply conversion fromula"
-        elif(fromUnits == "ton" and toUnits == "lb"):
+        elif(fromUnits == "yard" and toUnits == "m"):
             print "apply conversion fromula" 
-        elif(fromUnits == "lb" and toUnits == "g"):
+        elif(fromUnits == "yard" and toUnits == "foot"):
             print "apply conversion fromula"   
-        elif(fromUnits == "lb" and toUnits == "ton"):
+        elif(fromUnits == "yard" and toUnits == "inch"):
+            print "apply conversion fromula"
+        if (fromUnits == "foot" and toUnits == "yard"):
+           print "apply conversion formula"
+        elif(fromUnits == "foot" and toUnits == "m"):
+            print "apply conversion formula"
+        elif(fromUnits == "foot" and toUnits == "inch"):
+            print "apply conversion fromula"
+        elif(fromUnits == "inch" and toUnits == "m"):
+            print "apply conversion fromula" 
+        elif(fromUnits == "inch" and toUnits == "foot"):
+            print "apply conversion fromula"   
+        elif(fromUnits == "inch" and toUnits == "yard"):
             print "apply conversion fromula"
     elif(category == "temperature"):
-        if (fromUnits == "g" and toUnits == "lb"):
+        if (fromUnits == "C" and toUnits == "K"):
            print "apply conversion formula"
-        elif(fromUnits == "g" and toUnits == "ton"):
+        elif(fromUnits == "C" and toUnits == "F"):
             print "apply conversion formula"
-        elif(fromUnits == "ton" and toUnits == "g"):
+        elif(fromUnits == "K" and toUnits == "C"):
             print "apply conversion fromula"
-        elif(fromUnits == "ton" and toUnits == "lb"):
+        elif(fromUnits == "K" and toUnits == "F"):
             print "apply conversion fromula" 
-        elif(fromUnits == "lb" and toUnits == "g"):
+        elif(fromUnits == "F" and toUnits == "C"):
             print "apply conversion fromula"   
-        elif(fromUnits == "lb" and toUnits == "ton"):
+        elif(fromUnits == "F" and toUnits == "K"):
             print "apply conversion fromula"
 
 convertUnits(2,"g","ton","mass")
